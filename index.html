@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1F4E3D">
+<meta name="color-scheme" content="light">
+<!-- Política de contenido: solo código propio y el de inicio de sesión de Google (directivas documentadas por Google).
+     Si el botón de Google no aparece, borre esta línea un momento para descartar que sea la causa. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; frame-src https://accounts.google.com/gsi/; connect-src 'self' https://accounts.google.com/gsi/ https://script.google.com https://script.googleusercontent.com; img-src 'self' data:; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<title>SGI Oviedo</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="marca"><img src="icons/icon-192.png" alt="" width="28" height="28"><span id="titulo">SGI Oviedo</span></div>
+  <div class="top-der">
+    <span id="estado" class="chip" hidden></span>
+    <button id="btnUsuario" class="chip chip-btn" type="button" hidden></button>
+  </div>
+</header>
+<div id="banner" class="banner" hidden></div>
+<main id="vista" aria-live="polite"></main>
+<nav id="nav" class="nav" hidden></nav>
+
+<div id="login" class="overlay" hidden>
+  <div class="login-caja">
+    <img src="icons/icon-192.png" alt="" width="72" height="72">
+    <h1>SGI Oviedo</h1>
+    <p id="loginMsg">Inicie sesión con su cuenta corporativa.</p>
+    <div id="gbtn"></div>
+    <p class="mini" id="loginAyuda"></p>
+  </div>
+</div>
+
+<div id="hoja" class="hoja" hidden>
+  <div class="hoja-fondo" data-cerrar-hoja></div>
+  <div class="hoja-panel" role="dialog" aria-modal="true">
+    <div class="hoja-asa"></div>
+    <div id="hojaCont"></div>
+  </div>
+</div>
+<div id="toast" class="toast" hidden role="status"></div>
+
+<script src="config.js"></script>
+<script src="vendor/jsQR.js"></script>
+<script src="lib.js"></script>
+<script src="api.js"></script>
+<script src="demo.js"></script>
+<script src="scanner.js"></script>
+<script src="app.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>
