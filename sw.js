@@ -1,9 +1,10 @@
 /* Service worker: guarda la "carcasa" de la app para que abra rápido y funcione aunque la señal sea mala.
    NUNCA guarda datos del sistema: las llamadas a la API (otro origen) no pasan por aquí.
    Al cambiar archivos de la app, suba el número de VERSION para que los celulares los actualicen. */
-var VERSION = 'sgi-movil-1.0.0';
+var VERSION = 'sgi-movil-1.0.1';
 var ARCHIVOS = ['./', 'index.html', 'app.css', 'config.js', 'lib.js', 'api.js', 'demo.js', 'scanner.js', 'app.js',
-  'vendor/jsQR.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
+  'vendor/jsQR.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
+  'icons/logo-manzana-blanco.png', 'icons/logo-oviedo.png'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(ARCHIVOS); }).then(function () { return self.skipWaiting(); }));
